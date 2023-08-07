@@ -1,0 +1,147 @@
+>> openai api fine_tunes.create -t plane_angles.jsonl -m ada --suffix "plane angles"
+Upload progress: 100%|█████████████████████████████████████████████████████████████████████████| 13.9M/13.9M [00:00<00:00, 24.8Git/s]
+Uploaded file from plane_angles.jsonl: file-qwertyuiopqwertyuiop
+Created fine-tune: ft-qwertyuiopqwertyuiop
+Streaming events until fine-tuning is complete...
+
+(Ctrl-C will interrupt the stream, but not cancel the fine-tune)
+[2023-06-22 01:24:00] Created fine-tune: ft-qwertyuiopqwertyuiop
+
+
+
+Upload progress: 100%|█████████████████████████████████████████████████████████████████████████| 13.9M/13.9M [00:00<00:00, 24.8Git/s]Uploaded file from plane_angles.jsonl: file-qwertyuiopqwertyuiop
+Created fine-tune: ft-qwertyuiopqwertyuiop
+Streaming events until fine-tuning is complete...
+
+(Ctrl-C will interrupt the stream, but not cancel the fine-tune)
+[2023-06-22 01:24:00] Created fine-tune: ft-qwertyuiopqwertyuiop
+
+Stream interrupted (client disconnected).
+To resume the stream, run:
+
+
+  openai api fine_tunes.follow -i ft-qwertyuiopqwertyuiop
+
+>> openai api fine_tunes.follow -i ft-qwertyuiopqwertyuiop
+[2023-06-22 01:24:00] Created fine-tune: ft-qwertyuiopqwertyuiop
+[2023-06-22 01:26:36] Fine-tune costs $18.10
+[2023-06-22 01:26:37] Fine-tune enqueued. Queue number: 1
+[2023-06-22 01:26:39] Fine-tune is in the queue. Queue number: 0
+
+>> openai api fine_tunes.follow -i ft-qwertyuiopqwertyuiop
+[2023-06-22 01:24:00] Created fine-tune: ft-qwertyuiopqwertyuiop
+[2023-06-22 01:26:36] Fine-tune costs $18.10
+[2023-06-22 01:26:37] Fine-tune enqueued. Queue number: 1
+[2023-06-22 01:26:39] Fine-tune is in the queue. Queue number: 0
+[2023-06-22 01:27:14] Fine-tune started
+
+
+
+
+
+
+
+
+{
+  "object": "fine-tune",
+  "id": "ft-qwertyuiopqwertyuiop",
+  "hyperparams": {
+    "n_epochs": 4,
+    "batch_size": 16,
+    "prompt_loss_weight": 0.01,
+    "learning_rate_multiplier": 0.1
+  },
+  "organization_id": "org-qwertyuiopqwertyuiop",
+  "model": "ada",
+  "training_files": [
+    {
+      "object": "file",
+      "id": "file-qwertyuiopqwertyuiop",
+      "purpose": "fine-tune",
+      "filename": "plane_angles.jsonl",
+      "bytes": 13884371,
+      "created_at": 1687389840,
+      "status": "processed",
+      "status_details": null
+    }
+  ],
+  "validation_files": [],
+  "result_files": [
+    {
+      "object": "file",
+      "id": "file-qwertyuiopqwertyuiop",
+      "purpose": "fine-tune-results",
+      "filename": "compiled_results.csv",
+      "bytes": 152503,
+      "created_at": 1687395021,
+      "status": "processed",
+      "status_details": null
+    }
+  ],
+  "created_at": 1687389840,
+  "updated_at": 1687395021,
+  "status": "succeeded",
+  "fine_tuned_model": "ada:ft-qwertyuiop:plane-angles-2023-06-22-00-50-20",
+  "events": [
+    {
+      "object": "fine-tune-event",
+      "level": "info",
+      "message": "Created fine-tune: ft-qwertyuiopqwertyuiop",
+      "created_at": 1687389840
+    },
+    {
+      "object": "fine-tune-event",
+      "level": "info",
+      "message": "Fine-tune costs $18.10",
+      "created_at": 1687389996
+    },
+    {
+      "object": "fine-tune-event",
+      "level": "info",
+      "message": "Fine-tune enqueued. Queue number: 1",
+      "created_at": 1687389997
+    },
+    {
+      "object": "fine-tune-event",
+      "level": "info",
+      "message": "Fine-tune is in the queue. Queue number: 0",
+      "created_at": 1687389999
+    },
+    {
+      "object": "fine-tune-event",
+      "level": "info",
+      "message": "Fine-tune started",
+      "created_at": 1687390034
+    },
+    {
+      "object": "fine-tune-event",
+      "level": "info",
+      "message": "Completed epoch 1/4",
+      "created_at": 1687391294
+    },
+    {
+      "object": "fine-tune-event",
+      "level": "info",
+      "message": "Completed epoch 3/4",
+      "created_at": 1687393761
+    },
+    {
+      "object": "fine-tune-event",
+      "level": "info",
+      "message": "Uploaded model: ada:ft-qwertyuiop:plane-angles-2023-06-22-00-50-20",
+      "created_at": 1687395020
+    },
+    {
+      "object": "fine-tune-event",
+      "level": "info",
+      "message": "Uploaded result file: file-qwertyuiopqwertyuiop",
+      "created_at": 1687395021
+    },
+    {
+      "object": "fine-tune-event",
+      "level": "info",
+      "message": "Fine-tune succeeded",
+      "created_at": 1687395021
+    }
+  ]
+}
